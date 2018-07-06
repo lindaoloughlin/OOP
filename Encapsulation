@@ -1,0 +1,54 @@
+// This variable is not encapsulated.
+// Therefore it's missing some context. What is it naming? I dunno.
+String name;
+
+// BASIC ENCAPSULATION
+// These variables and methods are encapsulated in the Dog class, so
+// they make more sense now. They are members of the Dog class.
+class Dog {
+    String name;
+    int age;
+
+    void bark() {
+        System.out.println("Bark!");
+    }
+
+    void rename(String newName) {
+        name = newName;
+    }
+}
+
+// ACCESS MODIFIERS
+// The members above have context, but they are accessible by any other
+// code. To define access, use access modifiers:
+// - default: If there is no access modifier, the attribute is available
+//    only by classes within the same package.
+// - public: The attribute is accessible from any other class.
+// - protected: Same as default plus it's avaiable to subclasses
+// - private: accessible only within the declared class.
+
+class Dog {
+    private String name;
+    private int age;
+
+    void bark() {
+        System.out.println("Bark!");
+    }
+
+    void rename(String newName) {
+        name = newName;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setAge(int newAge) {
+        if(newAge > 0)
+            age = newAge;
+    }
+
+    public int getAge() {
+        return age;
+    }
+}
